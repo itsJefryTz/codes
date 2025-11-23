@@ -4,7 +4,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('https://codes.itsjefryservices.app', {
+        const res = await fetch('https://codess.itsjefryservices.app', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
