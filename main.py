@@ -1,11 +1,14 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import datetime
+from pathlib import Path
 
 app = Flask(__name__)
 CORS(app)
 
-LOG_FILE = "requests.log"
+BASE_DIR = Path(__file__).resolve().parent
+LOG_FILE = BASE_DIR / "logs" / "requests.log"
+LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log_post(data: dict):
     timestamp = datetime.datetime.utcnow().isoformat()
